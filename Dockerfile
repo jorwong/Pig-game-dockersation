@@ -1,4 +1,5 @@
 FROM ubuntu:18.04
+RUN sudo apt update
 COPY . ~
 RUN curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 RUN apt -y install nodejs
