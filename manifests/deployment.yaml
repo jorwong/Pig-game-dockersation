@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Piggame
+spec:
+  selector:
+    matchLabels:
+      app: Piggame
+
+  template:
+    metadata:
+      labels:
+        app: Piggame
+    spec:
+      containers:
+        - name: Piggame
+          image: PROJECT/IMAGE
+          ports:
+            - containerPort: 8080
