@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: Piggame
+  name: piggame
 spec:
   selector:
     matchLabels:
-      app: Piggame
+      app: piggame
 
   template:
     metadata:
       labels:
-        app: Piggame
+        app: piggame
     spec:
       containers:
-        - name: Piggame
+        - name: piggame
           image: PROJECT/IMAGE
           ports:
             - containerPort: 8080
