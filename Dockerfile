@@ -2,9 +2,8 @@ FROM ubuntu
 RUN apt update -y 
 RUN apt install curl -y 
 RUN apt -y install nodejs
-COPY Site ~
-RUN ls
+COPY Site ./mnt/
 RUN apt -y install npm
 RUN npm install http-server -g
 EXPOSE 8080
-CMD [ "http-server Site/index.html" ]
+CMD [ "http-server ./mnt/index.html" ]
