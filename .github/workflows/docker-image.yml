@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag piggame:$(date)
+        run: docker build . --file Dockerfile --tag piggame:$(date +"%d-%m-%y")
 
   Publish:
     runs-on: ubuntu-18.04
@@ -40,7 +40,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/piggame:$(date)
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/piggame:$(date +"%d-%m-%y")
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
 
