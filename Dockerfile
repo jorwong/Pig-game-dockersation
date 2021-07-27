@@ -1,9 +1,7 @@
 FROM ubuntu
 RUN apt update -y 
 RUN apt install curl -y 
-RUN apt -y install nodejs
+RUN apt install python3 -y
 COPY Site /mnt
-RUN apt -y install npm
-RUN npm install http-server -g
 EXPOSE 8080
-CMD http-server /mnt/index.html
+CMD python3 -m http.server --directory /mnt
